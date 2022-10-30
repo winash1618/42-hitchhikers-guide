@@ -46,4 +46,18 @@ ymaps.ready(function () {
     }
   
     navigator.geolocation.getCurrentPosition(success, error, options);
+	var searchControl = new ymaps.control.SearchControl({
+        options: {
+            provider: 'yandex#search'
+        }
+    });
+    myMap.controls.add(searchControl);
+    searchControl.search('Шоколадница');
+	// myGeoObject = new ymaps.GeoObject({
+	// 	geometry: {
+	// 	  type: "Point", // geometry type - point
+	// 	  coordinates: [55.8, 37.8] // координаты точки
+	// 	}
+	//   });
+	//   myMap.geoObjects.add(myGeoObject); 
   });
